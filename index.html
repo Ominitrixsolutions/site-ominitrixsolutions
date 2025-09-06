@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ominitrix Solutions</title>
+  <meta name="description" content="Ominitrix Solutions — smart software, clear outcomes." />
+  <meta property="og:title" content="Ominitrix Solutions" />
+  <meta property="og:description" content="Smart software, clear outcomes." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <img src="assets/logo.png" alt="Ominitrix Solutions logo" class="brand-logo" />
+        <span class="brand-name">OMINITRIX <strong>SOLUTIONS</strong></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="#services">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#contact" class="btn btn-primary small">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Tecnologia <span class="accent">& Design</span></h1>
+          <p>Criamos sites rápidos e com um design profissional para negócios que valorizam a eficiência. Cuidamos de
+            todo o processo, do planejamento ao lançamento, para que você tenha sua presença online sem nenhuma
+            complicação.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Contate-nos</a>
+            <a href="#services" class="btn btn-ghost">Nossos serviços</a>
+          </div>
+          <ul class="trust">
+            <li>⚡ Entrega Rápida</li>
+            <li>🔁 Suporte 24h</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <div class="logo-card glass">
+            <img src="assets/logo.png" alt="Ominitrix mark" />
+          </div>
+          <div class="glow glow-1"></div>
+          <div class="glow glow-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">Serviços</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Desenvolvimento</h3>
+            <p>Web & desktop apps with modern stacks, CI/CD and strong UX. Clean code, measurable metrics.</p>
+            <ul class="bullets">
+              <li>React / Next.js / Tauri</li>
+              <li>C++ / Unreal integrations</li>
+              <li>APIs, auth, payments</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Manutenção e suporte</h3>
+            <p>Make data and processes flow. ETL, job queues, telemetry, and rock-solid infra.</p>
+            <ul class="bullets">
+              <li>FastAPI / Node</li>
+              <li>Postgres / Redis</li>
+              <li>Docker / Cloud</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Consultoria em TI</h3>
+            <p>Practical AI to speed content, support and dev tasks. Guardrails, evals and cost control.</p>
+            <ul class="bullets">
+              <li>Chat & tools</li>
+              <li>RAG & embeddings</li>
+              <li>Observability</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          Nosso <span class="accent">Portfólio</span>
+        </h2>
+
+        <!-- filtros -->
+        <div class="filters">
+          <button class="pill active" data-filter="all">Todos</button>
+          <button class="pill" data-filter="web">Web</button>
+          <button class="pill" data-filter="mobile">Mobile</button>
+          <button class="pill" data-filter="software">Software</button>
+          <span class="ring" aria-hidden="true"></span>
+        </div>
+
+        <!-- grade -->
+        <div class="gallery">
+          <article class="shot" data-cat="web">
+            <img src="assets/portfolio/web-01.jpg" alt="Projeto Web 01">
+          </article>
+
+          <article class="shot" data-cat="mobile">
+            <img src="assets/portfolio/mobile-android.jpg" alt="App Android">
+          </article>
+
+          <article class="shot" data-cat="software">
+            <img src="assets/portfolio/consult-01.jpg" alt="Consultoria / Software">
+          </article>
+
+          <article class="shot" data-cat="web">
+            <img src="assets/portfolio/web-analytics.jpg" alt="Dashboard Web">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section">
+      <div class="container">
+        <h2 class="section-title">Tech stack</h2>
+        <ul class="chip-row">
+          <li class="chip">TypeScript</li>
+          <li class="chip">React / Next</li>
+          <li class="chip">FastAPI</li>
+          <li class="chip">Postgres</li>
+          <li class="chip">Docker</li>
+          <li class="chip">Unreal / C++</li>
+          <li class="chip">OpenAI API</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container grid-2">
+        <div>
+          <h2 class="section-title">Let’s talk</h2>
+          <p>Tell us what you’re building. We’ll reply within one business day.</p>
+          <ul class="bullets">
+            <li>Clear scope, clear pricing</li>
+            <li>Small, senior team</li>
+            <li>NDA on request</li>
+          </ul>
+        </div>
+        <form class="card form" onsubmit="return submitDemo(event)">
+          <label>
+            <span>Name</span>
+            <input required type="text" name="name" placeholder="Your name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input required type="email" name="email" placeholder="you@company.com" />
+          </label>
+          <label>
+            <span>Project</span>
+            <textarea name="message" rows="4" placeholder="What do you need?"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-note">This demo stores nothing — replace with your backend later.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a class="brand" href="#top">
+        <img src="assets/logo.png" alt="Ominitrix logo" class="brand-logo small" />
+        <span class="brand-name">Ominitrix <strong>Solutions</strong></span>
+      </a>
+      <p>© <span id="year"></span> Ominitrix Solutions. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">gh</a>
+        <a href="#" aria-label="X">x</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
