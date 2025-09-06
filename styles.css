@@ -3,8 +3,8 @@
   --bg-alt: #0f1322;
   --text: #e6e9f0;
   --muted: #a8b0c2;
-  --primary: #2ea7ff;           /* light blue */
-  --primary-700:#1d4ed8;        /* deep blue */
+  --primary: #2ea7ff;
+  --primary-700:#1d4ed8;
   --card: #121625;
   --border: #1b2137;
   --glow: 0 0 48px 8px rgba(41,152,255,.25);
@@ -34,6 +34,7 @@ img{max-width:100%;display:block}
 .brand-logo{width:40px;height:40px;object-fit:contain}
 .brand-logo.small{width:28px;height:28px}
 .brand-name{letter-spacing:.3px;font-weight:700}
+.brand-name strong{color: var(--primary-700);}
 .nav-links{display:flex;gap:1.2rem;align-items:center}
 .nav-links a{color:var(--muted);text-decoration:none;font-weight:600}
 .nav-links a:hover{color:var(--text)}
@@ -91,63 +92,76 @@ img{max-width:100%;display:block}
 .card h3{margin:6px 0 8px}
 .bullets{margin:10px 0 0;padding-left:18px;color:#cfd6e6}
 
-/* Portfolio */
-.filters{
-  display:flex; align-items:center; gap:10px; margin:8px 0 22px;
+/* Formulario estilizado */
+.form label{
+  display:flex;flex-direction:column;
+  font-weight:600;color:var(--muted);
+  margin-bottom:14px;font-size:.95rem;
 }
+.form input,.form textarea{
+  margin-top:6px;
+  padding:12px 14px;
+  background:#0c1020;
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:var(--text);
+  font-size:1rem;
+  outline:none;
+  transition:border .2s ease, box-shadow .2s ease;
+}
+.form input:focus,.form textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(46,167,255,.25);
+}
+.form textarea{resize:vertical;min-height:100px}
+.form-note{
+  font-size:.85rem;color:var(--muted);margin-top:8px;text-align:center
+}
+
+/* Portfolio */
+.filters{display:flex;align-items:center;gap:10px;margin:8px 0 22px}
 .pill{
   border:1px solid var(--border);
-  background:#0c1020; color:var(--text);
-  padding:.55rem .9rem; border-radius:12px;
-  font-weight:700; cursor:pointer;
+  background:#0c1020;color:var(--text);
+  padding:.55rem .9rem;border-radius:12px;
+  font-weight:700;cursor:pointer;
   transition:transform .12s ease, background .2s ease, border-color .2s ease;
 }
-.pill:hover{ transform:translateY(-1px); }
+.pill:hover{transform:translateY(-1px)}
 .pill.active{
   background:linear-gradient(135deg,var(--primary),var(--primary-700));
-  border-color:transparent; box-shadow:var(--glow);
+  border-color:transparent;box-shadow:var(--glow);
 }
 .filters .ring{
-  width:26px; height:26px; border-radius:50%;
+  width:26px;height:26px;border-radius:50%;
   border:2px solid var(--primary);
   box-shadow:0 0 0 4px rgba(46,167,255,.15);
-  margin-left:auto; opacity:.9;
+  margin-left:auto;opacity:.9;
 }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-@media (max-width: 960px){
-  .gallery{ grid-template-columns:1fr; }
-}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width: 960px){.gallery{grid-template-columns:1fr}}
 
 .shot{
-  position:relative; border-radius:16px; overflow:hidden;
-  background:var(--card); border:1px solid var(--border);
+  position:relative;border-radius:16px;overflow:hidden;
+  background:var(--card);border:1px solid var(--border);
   box-shadow:0 10px 30px rgba(0,0,0,.25);
   isolation:isolate;
 }
 .shot img{
-  width:100%; height:100%; object-fit:cover;
-  display:block; aspect-ratio:16/10;
+  width:100%;height:100%;object-fit:cover;
+  display:block;aspect-ratio:16/10;
   transition:transform .4s ease, filter .3s ease;
 }
 .shot::after{
-  content:""; position:absolute; inset:0; pointer-events:none;
+  content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(200px 120px at 15% 15%, rgba(46,167,255,.25), transparent 60%),
              radial-gradient(220px 140px at 85% 85%, rgba(29,78,216,.18), transparent 60%);
-  opacity:.25; mix-blend:screen; transition:opacity .3s ease;
+  opacity:.25;mix-blend:screen;transition:opacity .3s ease;
 }
-.shot:hover img{ transform:scale(1.04); filter:saturate(1.08); }
-.shot:hover::after{ opacity:.45; }
-
-.shot.hide{
-  opacity:0; transform:scale(.98);
-  transition:opacity .18s ease, transform .18s ease;
-  pointer-events:none;
-}
+.shot:hover img{transform:scale(1.04);filter:saturate(1.08)}
+.shot:hover::after{opacity:.45}
+.shot.hide{opacity:0;transform:scale(.98);transition:opacity .18s ease, transform .18s ease;pointer-events:none}
 
 /* Footer */
 .site-footer{border-top:1px solid var(--border);padding:24px 0;background:#0a0b0f}
