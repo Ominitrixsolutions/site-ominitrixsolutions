@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Fundo de partículas -->
+    <div id="particles-js"></div>
+
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="#top">
@@ -54,10 +57,6 @@
               <a href="#contact" class="btn btn-primary">Contate-nos</a>
               <a href="#services" class="btn btn-ghost">Nossos serviços</a>
             </div>
-            <!-- <ul class="trust">
-              <li>⚡ Entrega Rápida</li>
-              <li>🔁 Suporte 24h</li>
-            </ul> -->
             <div class="trust">
               <p>⚡ Entrega Rápida | 🔁 Suporte 24h</p>
             </div>
@@ -85,11 +84,6 @@
                 é orientado por métricas claras, garantindo que cada entrega
                 seja confiável, escalável e de fácil manutenção.
               </p>
-              <!-- <ul class="bullets">
-              <li>React / Next.js / Tauri</li>
-              <li>C++ / Unreal integrations</li>
-              <li>APIs, auth, payments</li>
-            </ul> -->
             </article>
             <article class="card">
               <h3>Manutenção e suporte</h3>
@@ -99,11 +93,6 @@
                 desempenho e garantimos que a infraestrutura permaneça estável e
                 segura.
               </p>
-              <!-- <ul class="bullets">
-              <li>FastAPI / Node</li>
-              <li>Postgres / Redis</li>
-              <li>Docker / Cloud</li>
-            </ul> -->
             </article>
             <article class="card">
               <h3>Consultoria em TI</h3>
@@ -113,11 +102,6 @@
                 para aumentar a produtividade, reduzir custos e manter o
                 controle sobre riscos e qualidade.
               </p>
-              <!-- <ul class="bullets">
-              <li>Chat & tools</li>
-              <li>RAG & embeddings</li>
-              <li>Observability</li>
-            </ul> -->
             </article>
           </div>
         </div>
@@ -143,10 +127,7 @@
             </article>
 
             <article class="shot" data-cat="software">
-              <img
-                src="assets/projeto-tasks.png"
-                alt="Consultoria / Software"
-              />
+              <img src="assets/projeto-tasks.png" alt="Consultoria / Software" />
             </article>
 
             <article class="shot" data-cat="web">
@@ -208,6 +189,8 @@
       </div>
     </footer>
 
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
