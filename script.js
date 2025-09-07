@@ -2,7 +2,9 @@
    Ominitrix — main script
    ========================= */
 
-// Mobile nav
+/* =========================
+   NAV MOBILE
+   ========================= */
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
 
@@ -12,7 +14,7 @@ if (toggle && links) {
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // fecha ao clicar em algum link (mobile)
+  // Fecha ao clicar em algum link (mobile)
   links.addEventListener('click', (e) => {
     if (e.target.closest('a')) {
       links.classList.remove('open');
@@ -21,39 +23,58 @@ if (toggle && links) {
   });
 }
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach((a) => {
-  a.addEventListener('click', (e) => {
-    const id = a.getAttribute('href');
-    if (!id || id.length <= 1) return;
-    const el = document.querySelector(id);
-    if (!el) return;
-    e.preventDefault();
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+// Fecha menu ao mudar de breakpoint (evita estado travado)
+let lastWide = window.innerWidth > 960;
+window.addEventListener('resize', () => {
+  const wide = window.innerWidth > 960;
+  if (wide !== lastWide) {
+    links && links.classList.remove('open');
+    toggle && toggle.setAttribute('aria-expanded', 'false');
+    lastWide = wide;
+  }
 });
 
-// Demo “submit”
-function submitDemo(e){
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button');
-  if (btn){
-    btn.disabled = true;
-    const prev = btn.textContent;
-    btn.textContent = 'Sent ✓';
-    setTimeout(()=>{ btn.disabled = false; btn.textContent = prev; }, 3000);
-  }
-  alert('Thanks! Wire this to your backend when ready.');
-  return false;
-}
-window.submitDemo = submitDemo;
+/* =========================
+   SMOOTH SCROLL (DESATIVADO)
+   ========================= */
+// document.querySelectorAll('a[href^="#"]').forEach((a) => {
+//   a.addEventListener('click', (e) => {
+//     const id = a.getAttribute('href');
+//     if (!id || id.length <= 1) return;
+//     const el = document.querySelector(id);
+//     if (!el) return;
+//     e.preventDefault();
+//     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//   });
+// });
 
-// Year
+/* =========================
+   FORMULÁRIO DEMO (DESATIVADO)
+   ========================= */
+// function submitDemo(e){
+//   e.preventDefault();
+//   const form = e.target;
+//   const btn = form.querySelector('button');
+//   if (btn){
+//     btn.disabled = true;
+//     const prev = btn.textContent;
+//     btn.textContent = 'Sent ✓';
+//     setTimeout(()=>{ btn.disabled = false; btn.textContent = prev; }, 3000);
+//   }
+//   alert('Thanks! Wire this to your backend when ready.');
+//   return false;
+// }
+// window.submitDemo = submitDemo;
+
+/* =========================
+   ANO AUTOMÁTICO
+   ========================= */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Portfolio filter
+/* =========================
+   PORTFOLIO FILTER
+   ========================= */
 (function setupPortfolioFilter(){
   const section = document.querySelector('#portfolio');
   if (!section) return;
@@ -63,7 +84,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   const shots = Array.from(section.querySelectorAll('.shot'));
   if (!pills.length || !shots.length) return;
 
-  // lazy nas imagens
+  // Lazy nas imagens
   shots.forEach((s) => {
     const img = s.querySelector('img');
     if (img && !img.loading) img.loading = 'lazy';
@@ -110,14 +131,3 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     applyFilter(initial.dataset.filter);
   }
 })();
-
-// fecha menu ao mudar de breakpoint (evita estado travado)
-let lastWide = window.innerWidth > 960;
-window.addEventListener('resize', () => {
-  const wide = window.innerWidth > 960;
-  if (wide !== lastWide) {
-    links && links.classList.remove('open');
-    toggle && toggle.setAttribute('aria-expanded', 'false');
-    lastWide = wide;
-  }
-});
